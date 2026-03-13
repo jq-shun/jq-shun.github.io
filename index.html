@@ -1,13 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>许俊强的主页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>许俊强 | 个人主页</title>
+    <style>
+        /* 整体风格：干净、学术、留白充足 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+            color: #1e2b3a;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 60px auto;
+            background: white;
+            padding: 40px 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #eaeef2;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: #0b1c2b;
+            border-left: 5px solid #2b6f9b;
+            padding-left: 20px;
+        }
+        .subhead {
+            font-size: 1.1rem;
+            color: #4a6572;
+            margin-bottom: 2rem;
+            padding-left: 25px;
+        }
+        .email {
+            background: #f0f5f9;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-family: monospace;
+            font-size: 1.1rem;
+            color: #1e3b4f;
+            display: inline-block;
+            margin-bottom: 2.5rem;
+            border: 1px solid #d3e0e9;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            border-bottom: 2px solid #dde5ed;
+            padding-bottom: 8px;
+            margin-top: 2.5rem;
+            color: #1e3b4f;
+        }
+        .paper-card {
+            background: #f6fafd;
+            border-radius: 16px;
+            padding: 25px 30px;
+            border: 1px solid #dde9f2;
+            transition: all 0.2s;
+            margin: 20px 0;
+        }
+        .paper-card:hover {
+            background: #edf4fa;
+            border-color: #aac7df;
+        }
+        .paper-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #0f2c3d;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .download-btn {
+            display: inline-block;
+            background: #2b6f9b;
+            color: white;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 15px;
+            box-shadow: 0 4px 8px rgba(0,60,100,0.1);
+        }
+        .download-btn:hover {
+            background: #1f567a;
+        }
+        .footer-note {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: #78909c;
+            text-align: center;
+            border-top: 1px dashed #cddde9;
+            padding-top: 20px;
+        }
+        a {
+            color: #2b6f9b;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>你好，我是许俊强</h1>
-    <p>邮箱：202517328@mail.sdu.edu.cn</p>
-    <p>这是我的个人网站，基于 GitHub Pages 搭建。</p>
-    <p><a href="基于拓扑向量空间的神经算子理论_逼近误差_泛化界与计算下界_V2.pdf">点击下载我的论文 PDF</a></p>
+<div class="container">
+    <h1>许俊强</h1>
+    <div class="subhead">数学 · 神经算子理论 · 泛函分析</div>
+
+    <div class="email">
+        📧 202517328@mail.sdu.edu.cn
+    </div>
+
+    <h2>📄 研究论文</h2>
+    <div class="paper-card">
+        <div class="paper-title">
+            基于拓扑向量空间的神经算子理论:<br>逼近误差、泛化界与计算下界 (V2)
+        </div>
+        <div style="color:#3d5f7a; margin:10px 0; font-size:0.95rem;">
+            本文在拓扑向量空间框架下系统分析神经算子的逼近能力与泛化边界，为算子学习提供理论保障。
+        </div>
+        <a href="基于拓扑向量空间的神经算子理论_逼近误差_泛化界与计算下界_V2.pdf" class="download-btn" download>
+            ⬇️ 下载 PDF 全文
+        </a>
+    </div>
+
+    <!-- 你可以在这里继续添加更多内容：教育背景、研究方向、联系方式等 -->
+
+    <div class="footer-note">
+        ⚡ 由 GitHub Pages 强力驱动 · 页面最后更新于 2026年3月
+    </div>
+</div>
 </body>
 </html>
