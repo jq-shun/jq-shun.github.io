@@ -162,11 +162,52 @@
         .lang-section {
             transition: opacity 0.1s ease;
         }
-        .inline-code {
+        /* 教育背景两行紧凑样式 */
+        .edu-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+            padding: 4px 0;
+            border-bottom: 1px dashed #e2ecf3;
+        }
+        .edu-line:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .edu-degree {
+            font-weight: 600;
+            color: #1e4a6e;
+            min-width: 110px;
+        }
+        .edu-school {
+            color: #2c6b8f;
+        }
+        .edu-date {
             font-family: monospace;
-            background: #eef3f7;
-            padding: 0 4px;
-            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #5f7f94;
+            background: #eef3f8;
+            padding: 2px 10px;
+            border-radius: 30px;
+            white-space: nowrap;
+        }
+        .edu-detail {
+            flex: 1;
+            margin-left: 16px;
+        }
+        @media (max-width: 600px) {
+            .edu-line {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .edu-detail {
+                margin-left: 0;
+            }
+            .edu-date {
+                align-self: flex-start;
+            }
         }
     </style>
 </head>
@@ -184,14 +225,14 @@
         <div class="subhead">概率论 · 金融数学 · 随机控制</div>
         <div class="email">📧 202517328@mail.sdu.edu.cn</div>
 
-        <h2>📄 研究论文</h2>
-        <!-- 论文1 中文 -->
+        <h2>📚 课程笔记</h2>
+        <!-- 笔记1 中文 -->
         <div class="paper-card">
             <div class="paper-title">基于拓扑向量空间的神经算子理论:<br>逼近误差、泛化界与计算下界 (V2)</div>
             <div style="color:#3d5f7a; margin:10px 0; font-size:0.95rem;">本文在拓扑向量空间框架下系统分析神经算子的逼近能力与泛化边界，为算子学习提供理论保障。</div>
             <a href="基于拓扑向量空间的神经算子理论_逼近误差_泛化界与计算下界_V2.pdf" class="download-btn" download>⬇️ 下载 PDF 全文</a>
         </div>
-        <!-- 论文2 中文 -->
+        <!-- 笔记2 中文 -->
         <div class="paper-card">
             <div class="paper-title">随机微分方程导论</div>
             <div style="color:#3d5f7a; margin:10px 0; font-size:0.95rem;">介绍随机微分方程的基础理论、解的存在唯一性、伊藤积分及其在金融物理中的应用。</div>
@@ -209,12 +250,25 @@
 
         <h2>📖 教育背景</h2>
         <div class="edu-block">
-            <p><strong>🎓 硕士研究生 (统计学)</strong> (2025 – 至今)<br>山东大学 · 数学与交叉科学研究中心</p>
-            <p><strong>🎓 理学学士 (统计学)</strong> (2021 – 2025)<br>云南大学 · 统计学专业</p>
+            <!-- 中文顺序：从早到晚 (本科 -> 硕士) -->
+            <div class="edu-line">
+                <span class="edu-degree">本科</span>
+                <span class="edu-detail">
+                    <span class="edu-school">云南大学 数学与统计学院 · 统计学</span>
+                </span>
+                <span class="edu-date">2021 – 2025</span>
+            </div>
+            <div class="edu-line">
+                <span class="edu-degree">硕士研究生</span>
+                <span class="edu-detail">
+                    <span class="edu-school">山东大学 数学与交叉科学研究中心 · 统计学</span>
+                </span>
+                <span class="edu-date">2025 – 至今</span>
+            </div>
         </div>
 
         <div class="footer-note">
-            ⚡ 由 GitHub Pages 强力驱动 · 页面最后更新于 2026年4月
+            📄 页面最后更新于 2026年4月
         </div>
     </div>
 
@@ -224,14 +278,14 @@
         <div class="subhead">Probability Theory · Mathematical Finance · Stochastic Control</div>
         <div class="email">📧 202517328@mail.sdu.edu.cn</div>
 
-        <h2>📄 Research Papers</h2>
-        <!-- 论文1 英文 -->
+        <h2>📚 Course Notes</h2>
+        <!-- 笔记1 英文 -->
         <div class="paper-card">
             <div class="paper-title">Neural Operator Theory in Topological Vector Spaces:<br>Approximation Error, Generalization Bounds, and Computational Lower Bounds (V2)</div>
             <div style="color:#3d5f7a; margin:10px 0; font-size:0.95rem;">This work systematically analyzes the approximation capacity and generalization boundaries of neural operators within the framework of topological vector spaces, providing theoretical guarantees for operator learning.</div>
             <a href="基于拓扑向量空间的神经算子理论_逼近误差_泛化界与计算下界_V2.pdf" class="download-btn" download>⬇️ Download PDF (Full Text)</a>
         </div>
-        <!-- 论文2 英文 -->
+        <!-- 笔记2 英文 -->
         <div class="paper-card">
             <div class="paper-title">Introduction to Stochastic Differential Equations</div>
             <div style="color:#3d5f7a; margin:10px 0; font-size:0.95rem;">An introduction to the fundamental theory of stochastic differential equations, including existence and uniqueness of solutions, Itô calculus, and applications in finance and physics.</div>
@@ -249,12 +303,25 @@
 
         <h2>📖 Education</h2>
         <div class="edu-block">
-            <p><strong>🎓 M.Sc. in Statistics</strong> (2025 – Present)<br>Shandong University · Research Center for Mathematics and Interdisciplinary Sciences</p>
-            <p><strong>🎓 B.Sc. in Statistics</strong> (2021 – 2025)<br>Yunnan University · Statistics Major</p>
+            <!-- 英文顺序：从晚到早 (硕士 -> 本科) -->
+            <div class="edu-line">
+                <span class="edu-degree">M.Sc. in Statistics</span>
+                <span class="edu-detail">
+                    <span class="edu-school">Shandong University · Research Center for Mathematics and Interdisciplinary Sciences</span>
+                </span>
+                <span class="edu-date">2025 – Present</span>
+            </div>
+            <div class="edu-line">
+                <span class="edu-degree">B.Sc. in Statistics</span>
+                <span class="edu-detail">
+                    <span class="edu-school">Yunnan University · School of Mathematics and Statistics</span>
+                </span>
+                <span class="edu-date">2021 – 2025</span>
+            </div>
         </div>
 
         <div class="footer-note">
-            ⚡ Hosted on GitHub Pages · Last updated: April 2026
+            📄 Last updated: April 2026
         </div>
     </div>
 </div>
