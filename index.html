@@ -2,211 +2,358 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>许俊强 | 个人主页</title>
     <style>
-        /* 整体风格：干净、学术、留白充足 */
+        /* 整体风格：干净、学术、留白充足 + 移动端完美适配 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: #fafafa;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             color: #1e2b3a;
             line-height: 1.6;
             transition: all 0.2s ease;
         }
+
         .container {
             max-width: 800px;
-            margin: 60px auto;
+            width: 100%;
+            margin: 0 auto;
             background: white;
-            padding: 40px 50px;
+            padding: 30px 24px;
             border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             border: 1px solid #eaeef2;
             position: relative;
         }
-        /* 语言切换按钮容器 */
+
+        /* 语言切换按钮容器 - 移动端友好 */
         .lang-switch {
             position: absolute;
-            top: 30px;
-            right: 40px;
+            top: 20px;
+            right: 20px;
             display: flex;
-            gap: 12px;
+            gap: 8px;
             background: #f0f4f8;
-            padding: 5px 10px;
+            padding: 4px 8px;
             border-radius: 60px;
             border: 1px solid #d4e0e9;
             backdrop-filter: blur(2px);
+            z-index: 10;
         }
+
         .lang-btn {
             background: transparent;
             border: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            padding: 6px 18px;
+            padding: 5px 14px;
             border-radius: 40px;
             cursor: pointer;
             transition: all 0.2s;
             font-family: inherit;
             color: #3c6e8f;
         }
+
         .lang-btn.active {
             background: #2b6f9b;
             color: white;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
+
         .lang-btn:not(.active):hover {
             background: #e2ebf3;
             color: #1e4b6e;
         }
+
         h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 500;
-            margin-top: 0;
+            margin-top: 0.5rem;
             margin-bottom: 0.5rem;
             color: #0b1c2b;
             border-left: 5px solid #2b6f9b;
-            padding-left: 20px;
+            padding-left: 18px;
+            word-break: break-word;
         }
+
         .subhead {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #4a6572;
-            margin-bottom: 2rem;
-            padding-left: 25px;
+            margin-bottom: 1.8rem;
+            padding-left: 23px;
+            word-break: break-word;
         }
+
         .email {
             background: #f0f5f9;
-            padding: 10px 20px;
+            padding: 8px 18px;
             border-radius: 40px;
             font-family: monospace;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             color: #1e3b4f;
             display: inline-block;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             border: 1px solid #d3e0e9;
+            word-break: break-all;
+            max-width: 100%;
+            overflow-x: auto;
         }
+
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 400;
             border-bottom: 2px solid #dde5ed;
-            padding-bottom: 8px;
-            margin-top: 2.5rem;
+            padding-bottom: 6px;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
             color: #1e3b4f;
         }
+
         .paper-card {
             background: #f6fafd;
             border-radius: 16px;
-            padding: 25px 30px;
+            padding: 20px 22px;
             border: 1px solid #dde9f2;
             transition: all 0.2s;
-            margin: 20px 0;
+            margin: 18px 0;
         }
+
         .paper-card:hover {
             background: #edf4fa;
             border-color: #aac7df;
         }
+
         .paper-title {
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             font-weight: 500;
             color: #0f2c3d;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             line-height: 1.4;
         }
+
         .download-btn {
             display: inline-block;
             background: #2b6f9b;
             color: white;
             text-decoration: none;
-            padding: 12px 28px;
+            padding: 10px 24px;
             border-radius: 40px;
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 0.9rem;
             border: none;
             cursor: pointer;
             transition: background 0.2s;
-            margin-top: 15px;
+            margin-top: 12px;
             box-shadow: 0 4px 8px rgba(0,60,100,0.1);
         }
+
         .download-btn:hover {
             background: #1f567a;
         }
+
         .footer-note {
-            margin-top: 3rem;
-            font-size: 0.9rem;
+            margin-top: 2.5rem;
+            font-size: 0.8rem;
             color: #78909c;
             text-align: center;
             border-top: 1px dashed #cddde9;
-            padding-top: 20px;
+            padding-top: 18px;
         }
+
         a {
             color: #2b6f9b;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
         .research-list, .edu-block {
             background: #f9fbfd;
             border-radius: 16px;
-            padding: 20px 25px;
+            padding: 18px 22px;
             margin: 15px 0 20px 0;
             border: 1px solid #e4edf5;
         }
+
         .research-list ul {
             margin: 0;
             padding-left: 20px;
         }
+
         .research-list li {
             margin: 8px 0;
+            font-size: 0.95rem;
         }
+
         .lang-section {
             transition: opacity 0.1s ease;
         }
-        /* 教育背景两行紧凑样式 */
+
+        /* 教育背景两行紧凑样式 - 移动端适配 */
         .edu-line {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             flex-wrap: wrap;
-            margin-bottom: 12px;
-            padding: 4px 0;
+            margin-bottom: 14px;
+            padding: 6px 0;
             border-bottom: 1px dashed #e2ecf3;
         }
+
         .edu-line:last-child {
             border-bottom: none;
             margin-bottom: 0;
         }
+
         .edu-degree {
             font-weight: 600;
             color: #1e4a6e;
-            min-width: 110px;
+            min-width: 85px;
+            font-size: 0.95rem;
         }
+
         .edu-school {
             color: #2c6b8f;
+            font-size: 0.9rem;
         }
+
         .edu-date {
             font-family: monospace;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #5f7f94;
             background: #eef3f8;
             padding: 2px 10px;
             border-radius: 30px;
             white-space: nowrap;
         }
+
         .edu-detail {
             flex: 1;
-            margin-left: 16px;
+            margin-left: 12px;
         }
-        @media (max-width: 600px) {
+
+        /* ========= 移动端专用适配 (小于640px) ========= */
+        @media (max-width: 640px) {
+            body {
+                padding: 12px;
+            }
+            .container {
+                padding: 22px 18px;
+            }
+            h1 {
+                font-size: 1.7rem;
+                padding-left: 14px;
+            }
+            .subhead {
+                font-size: 0.9rem;
+                padding-left: 19px;
+                margin-bottom: 1.2rem;
+            }
+            .email {
+                font-size: 0.85rem;
+                padding: 6px 14px;
+                margin-bottom: 1.5rem;
+            }
+            h2 {
+                font-size: 1.35rem;
+                margin-top: 1.6rem;
+            }
+            .paper-card {
+                padding: 16px 18px;
+            }
+            .paper-title {
+                font-size: 1rem;
+            }
+            .download-btn {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+            }
+            .lang-switch {
+                top: 16px;
+                right: 16px;
+                gap: 6px;
+                padding: 3px 6px;
+            }
+            .lang-btn {
+                font-size: 0.75rem;
+                padding: 4px 12px;
+            }
             .edu-line {
                 flex-direction: column;
                 gap: 6px;
+                align-items: flex-start;
             }
             .edu-detail {
                 margin-left: 0;
+                width: 100%;
+            }
+            .edu-degree {
+                margin-bottom: 2px;
             }
             .edu-date {
                 align-self: flex-start;
+                margin-top: 4px;
+            }
+            .research-list li {
+                font-size: 0.88rem;
+            }
+            .footer-note {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* 极小屏幕 (<=480px) 进一步优化 */
+        @media (max-width: 480px) {
+            .container {
+                padding: 18px 14px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .paper-card {
+                padding: 14px 16px;
+            }
+            .download-btn {
+                width: 100%;
+                text-align: center;
+            }
+            .lang-btn {
+                padding: 3px 10px;
+                font-size: 0.7rem;
+            }
+        }
+
+        /* 打印样式保留原有学术感 */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                box-shadow: none;
+                border: none;
+                padding: 0.5cm;
+                max-width: 100%;
+            }
+            .lang-switch {
+                display: none;
+            }
+            .download-btn {
+                display: none;
+            }
+            a {
+                text-decoration: none;
             }
         }
     </style>
@@ -229,13 +376,13 @@
         <!-- 笔记1 中文 -->
         <div class="paper-card">
             <div class="paper-title">基于拓扑向量空间的神经算子理论:<br>逼近误差、泛化界与计算下界 (V2)</div>
-            <div style="color:#3d5f7a; margin:10px 0; font-size:0.95rem;">本文在拓扑向量空间框架下系统分析神经算子的逼近能力与泛化边界，为算子学习提供理论保障。</div>
+            <div style="color:#3d5f7a; margin:8px 0; font-size:0.9rem;">本文在拓扑向量空间框架下系统分析神经算子的逼近能力与泛化边界，为算子学习提供理论保障。</div>
             <a href="基于拓扑向量空间的神经算子理论_逼近误差_泛化界与计算下界_V2.pdf" class="download-btn" download>⬇️ 下载 PDF 全文</a>
         </div>
         <!-- 笔记2 中文 -->
         <div class="paper-card">
             <div class="paper-title">随机微分方程导论</div>
-            <div style="color:#3d5f7a; margin:10px 0; font-size:0.95rem;">介绍随机微分方程的基础理论、解的存在唯一性、伊藤积分及其在金融物理中的应用。</div>
+            <div style="color:#3d5f7a; margin:8px 0; font-size:0.9rem;">介绍随机微分方程的基础理论、解的存在唯一性、伊藤积分及其在金融物理中的应用。</div>
             <a href="随机微分方程导论.pdf" class="download-btn" download>⬇️ 下载 PDF 全文</a>
         </div>
 
@@ -282,13 +429,13 @@
         <!-- 笔记1 英文 -->
         <div class="paper-card">
             <div class="paper-title">Neural Operator Theory in Topological Vector Spaces:<br>Approximation Error, Generalization Bounds, and Computational Lower Bounds (V2)</div>
-            <div style="color:#3d5f7a; margin:10px 0; font-size:0.95rem;">This work systematically analyzes the approximation capacity and generalization boundaries of neural operators within the framework of topological vector spaces, providing theoretical guarantees for operator learning.</div>
+            <div style="color:#3d5f7a; margin:8px 0; font-size:0.9rem;">This work systematically analyzes the approximation capacity and generalization boundaries of neural operators within the framework of topological vector spaces, providing theoretical guarantees for operator learning.</div>
             <a href="基于拓扑向量空间的神经算子理论_逼近误差_泛化界与计算下界_V2.pdf" class="download-btn" download>⬇️ Download PDF (Full Text)</a>
         </div>
         <!-- 笔记2 英文 -->
         <div class="paper-card">
             <div class="paper-title">Introduction to Stochastic Differential Equations</div>
-            <div style="color:#3d5f7a; margin:10px 0; font-size:0.95rem;">An introduction to the fundamental theory of stochastic differential equations, including existence and uniqueness of solutions, Itô calculus, and applications in finance and physics.</div>
+            <div style="color:#3d5f7a; margin:8px 0; font-size:0.9rem;">An introduction to the fundamental theory of stochastic differential equations, including existence and uniqueness of solutions, Itô calculus, and applications in finance and physics.</div>
             <a href="随机微分方程导论.pdf" class="download-btn" download>⬇️ Download PDF (Full Text)</a>
         </div>
 
